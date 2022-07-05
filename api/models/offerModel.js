@@ -6,8 +6,7 @@ const offerModel = mongoose.Schema({
     location: String,
     url: {
         type: String,
-        unique: true,
-        dropDups: true
+        unique: true
     }
 })
 

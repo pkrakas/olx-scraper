@@ -1,3 +1,6 @@
+const API_URL='http://localhost:5000/api'
+const ACCESS_TOKEN='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGVkIjp0cnVlLCJpYXQiOjE2NTcwNDI4MDJ9.3Rcy8FsttACRp0o7IfN79IfdXs63wyYADKL9_wC3Vj8'
+
 async function scrapeOffers() {
     const offerAnchors = $("div[data-cy='l-card'] a").toArray()
     const offers = offerAnchors.map(offer => {
@@ -15,8 +18,16 @@ async function scrapeOffers() {
         }
     })
 
+    const { insertedRows } = await fetch(`${API_URL}/addNewOffers`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ACCESS_TOKEN}`
+        },
+        body: JSON.stringify(offers)
+    }).then(res => res.json())
     
-    
+    console.log('Inserted rows count: ' + insertedRows)
 }
 
 async function runScraper() {

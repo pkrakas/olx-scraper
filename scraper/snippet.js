@@ -7,7 +7,7 @@ async function scrapeOffers() {
         const url = offer.href
         textSplit = offer.innerText.split('\n\n')
         const title = textSplit[0].split('\n')[1] || textSplit[0]
-        const price = textSplit[1].split('\n')[0]
+        const price = textSplit[1].split('\n')[0].replace('zł', '').replace(' ', '')
         const location = textSplit[2].split('-')[0].trim()
 
         return {
@@ -71,7 +71,7 @@ function waitForElement(selector) {
 }
 
 async function timeout() {
-    return new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 3000) + 2000)) // Between 2-5s
+    return new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 1000) + 3000)) // Between 1-3s
 }
 
 (() => {

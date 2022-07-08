@@ -6,4 +6,4 @@
 3. Run scraper/snippet.js code from developer's console
 ```
 ### Video demonstration:
-[https://youtu.be/djUOU9DeMn0](https://youtu.be/djUOU9DeMn0)
+[https://youtu.be/nGKgtGUCQ3w](https://youtu.be/nGKgtGUCQ3w)

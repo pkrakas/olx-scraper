@@ -1,5 +1,5 @@
 const API_URL='http://localhost:5000/api'
-const ACCESS_TOKEN='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGVkIjp0cnVlLCJpYXQiOjE2NTcwNDI4MDJ9.3Rcy8FsttACRp0o7IfN79IfdXs63wyYADKL9_wC3Vj8'
+const ACCESS_TOKEN=''
 
 async function scrapeOffers() {
     const offerAnchors = $("div[data-cy='l-card'] a").toArray()
